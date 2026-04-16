@@ -108,5 +108,5 @@ deploy:
 
 search:
  path: search.xml
- filed: post
+ field: post
  content: true
