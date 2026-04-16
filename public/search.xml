@@ -4,6 +4,101 @@
   
     
     <entry>
+      <title>测试文章 - 动漫分享</title>
+      <link href="/2026/04/16/test-4/"/>
+      <url>/2026/04/16/test-4/</url>
+      
+        <content type="html"><![CDATA[<p>这是一篇关于动漫分享的测试文章。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 动漫分享 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试文章 - 学习笔记</title>
+      <link href="/2026/04/16/test-3/"/>
+      <url>/2026/04/16/test-3/</url>
+      
+        <content type="html"><![CDATA[<p>这是一篇关于学习笔记的测试文章。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试文章 - 生活随笔</title>
+      <link href="/2026/04/16/test-2/"/>
+      <url>/2026/04/16/test-2/</url>
+      
+        <content type="html"><![CDATA[<p>这是一篇关于生活随笔的测试文章。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活随笔 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试文章 - 技术教程</title>
+      <link href="/2026/04/16/test-1/"/>
+      <url>/2026/04/16/test-1/</url>
+      
+        <content type="html"><![CDATA[<p>这是一篇关于技术教程的测试文章。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试文章 - 二次元</title>
+      <link href="/2026/04/16/test-0/"/>
+      <url>/2026/04/16/test-0/</url>
+      
+        <content type="html"><![CDATA[<p>这是一篇关于二次元的测试文章。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 二次元 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2026/04/15/hello-world/"/>
       <url>/2026/04/15/hello-world/</url>

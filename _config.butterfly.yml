@@ -3,19 +3,17 @@
 # Docs: https://butterfly.js.org/
 # --------------------------------------
 
-# Navigation
 menu:
   首页: / || fas fa-home
   归档: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
-  更多||fas fa-list||hide:
+  更多 || fas fa-list || hide:
     音乐: /music/ || fas fa-music
-    影视: /movies/ || fas fa-video
-    图片: /photos/ || fas fa-image
+    电影: /movies/ || fas fa-film
+    留言: /comments/ || fas fa-comment
   友链: /link/ || fas fa-link
-  关于: /about/ || fas fa-heart
-
+  关于: /about/ || fas fa-user
 # Code blocks
 code_blocks:
   theme: darker
@@ -26,19 +24,23 @@ code_blocks:
 # Social
 social:
   fab fa-github: https://github.com/moehime113 || GitHub
-  fab fa-envelope: mailto:1014368305@qq.com || Email
+  fab fa-weixin: /img/wechat.jpg || 微信 || '#07C160'
+  fab fa-qq: /img/qq.jpg || QQ || '#12B7F5'
+  fab fa-bilibili: https://space.bilibili.com/1978757278 || B站 || '#FB7299'
 
 # Global images
 favicon: /img/favicon.ico
-index_img: https://source.fomal.cc/img/index_bg.webp
-default_top_img: https://source.fomal.cc/img/post_bg.webp
-background: https://source.fomal.cc/img/bg.webp
+index_img: /img/cover1.jpg
+default_top_img: /img/cover2.jpg
+background: url(/img/black1.jpg)
 
 # A simple 404 page
+error_img:
+  post_page: /img/404.jpg
+
 error_404:
   enable: true
   subtitle: 页面没有找到
-  background: https://source.fomal.cc/img/404_bg.webp
 
 # Cover
 cover:
@@ -79,7 +81,7 @@ post_copyright:
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 reward:
-  enable: true
+  enable: false
   QR_code:
     - img: /img/wechat_pay.png
       link:
@@ -111,16 +113,25 @@ copy:
 
 # Footer
 footer:
+  enable: true
   owner:
     enable: true
-    since: 2026
+    start_year: 2026
+    name: Echo 🎯
   copyright:
     enable: false
-  custom_text: Powered by Hexo & Butterfly
+
+  custom_text: |
+    <div style="display:flex;align-items:center;justify-content:center;gap:16px;font-size:14px;margin-top:8px;">
+      Powered by Hexo & Butterfly &nbsp; | &nbsp;
+    </div>
+  runtime:
+    enable: false
+ 
 
 # Display mode
 darkmode:
-  enable: false
+  enable: true
   button: true
 
 readmode: true
@@ -152,33 +163,26 @@ busuanzi:
   site_pv: true
   page_pv: true
 
-# Effects and UI
+# ------------------------------
+# 视觉效果与界面细节
+# ------------------------------
 activate_power_mode:
   enable: false
   colorful: true
   shake: true
   mobile: false
 
-footer_bg: true
+# 页脚背景交给 source/css/custom.css 单独设计，避免和页面背景共享
+footer_bg: false
 
 canvas_fluttering_ribbon:
   enable: true
   mobile: true
 
 fireworks:
-  enable: true
+  enable: false
   zIndex: 9999
   mobile: false
-
-font:
-  global_font_size: 15px
-  code_font_size: 14px
-  font_family: Microsoft YaHei, sans-serif
-  code_font_family: Source Code Pro, monospace
-
-blog_title_font:
-  font_link:
-  font_family: var(--font-family-blog-title)
 
 subtitle:
   enable: true
@@ -209,13 +213,227 @@ pjax:
 inject:
   head:
     - <link rel="icon" href="/img/favicon.ico">
+    - <link rel="stylesheet" href="/css/custom.css">
+    - <link rel="stylesheet" href="/css/universe.css">
   bottom:
-    - <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    - <script>particlesJS.load('particles-js', '/particles.json', function () { console.log('particles.js loaded - callback') })</script>
+    - <canvas id="universe"></canvas>
+    - <script defer src="/js/universe.js"></script>
 
-# Search
+# ------------------------------
+# 站内搜索
+# ------------------------------
 search:
   use: local_search
   local_search:
     preload: false
     top_n_per_article: 1
+
+# ------------------------------
+# 信笺式留言板（Violet）
+# 建议仅在 /comments/ 页面显示，避免干扰普通文章页。
+# ------------------------------
+envelope_comment:
+  enable: true
+  enable_page: /comments/
+  custom_pic:
+    cover: https://cdn.jsdelivr.net/npm/hexo-butterfly-envelope/lib/violet.jpg
+    line: https://cdn.jsdelivr.net/npm/hexo-butterfly-envelope/lib/line.png
+    beforeimg: https://cdn.jsdelivr.net/npm/hexo-butterfly-envelope/lib/before.png
+    afterimg: https://cdn.jsdelivr.net/npm/hexo-butterfly-envelope/lib/after.png
+  message:
+  author: Echo
+  header: 给我留个脚印吧 💌
+  content: 欢迎来到我的小站！<br>不管是建议、吐槽还是单纯的问候，都可以在这里留下你的足迹~
+  btn_text: 发送留言
+  style:
+    index: bottom
+    post: bottom
+    page: bottom
+
+# ------------------------------
+# 页脚增强
+# ------------------------------
+footer_beautify:
+  enable:
+    timer: false  # 关闭计时器
+    bdage: false  # 关闭徽标
+  priority: 5
+  enable_page: all
+  layout:
+    type: id
+    name: footer
+    index: 0
+
+
+  # 首页分类磁贴(店长同款)
+categoryBar:
+  enable: true
+  priority: 5
+  enable_page: /
+  layout:
+    type: id
+    name: recent-posts
+    index: 0
+  column: odd
+  row: 1
+  message:
+    - descr: 二次元
+      cover: https://picsum.photos/id/1/600/300
+    - descr: 技术教程
+      cover: https://picsum.photos/id/2/600/300
+    - descr: 生活随笔
+      cover: https://picsum.photos/id/3/600/300
+    - descr: 学习笔记
+      cover: https://picsum.photos/id/4/600/300
+    - descr: 动漫分享
+      cover: https://picsum.photos/id/5/600/300
+    - descr: 游戏日常
+      cover: https://picsum.photos/id/6/600/300
+  custom_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css
+
+  # 文章置顶轮播海报
+swiper:
+  enable: true
+  priority: 5
+  enable_page: /
+  timemode: date
+  layout:
+    type: id
+    name: recent-posts
+    index: 0
+  default_descr: 欢迎来到我的二次元小窝！✨
+  swiper_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper.min.css
+  swiper_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper.min.js
+  custom_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiperstyle.css
+  custom_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper_init.js
+
+font:
+  global-font-size: '15px'
+  code-font-size: '14px'
+  font-family: YSHST, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif
+  code-font-family: Consolas, YSHST, "Microsoft YaHei", Menlo, "PingFang SC", "Microsoft JhengHei", sans-serif
+
+blog_title_font:
+  font_link:
+  font-family: YSHST, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif
+
+# WOWJS 滚动动画（店长同款）
+wowjs:
+  enable: true
+  priority: 10
+  mobile: true # 手机端也开启动画（更美观）
+  animateitem:
+    - class: recent-post-item # 文章卡片
+      style: animate__fadeInUp # 从下往上淡入
+      duration: 0.8s
+      delay: 0s
+      offset: 100
+    - class: card-widget # 侧边栏卡片
+      style: animate__zoomIn # 放大进入
+      duration: 0.8s
+    - class: categoryBar-item # 分类磁贴卡片
+      style: animate__fadeIn
+      duration: 0.8s
+    - class: #pagination
+      style: animate__fadeIn
+      duration: 1s
+  animate_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-wowjs/lib/animate.min.css
+  wow_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-wowjs/lib/wow.min.js
+  wow_init_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-wowjs/lib/wow_init.js
+
+# ================================
+# 店长外挂标签（稳定精简版）
+# ================================
+
+tag_plugins:
+  enable: true
+  priority: 5
+  issues: false
+
+  link:
+    placeholder: https://at.alicdn.com/t/c/font_4406796_7o485bwrf9i.svg
+
+  CDN:
+    anima: false
+    jquery: false
+    issues: false
+    iconfont: false
+    carousel: false
+    tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.3.5/lib/tag_plugins.css
+
+/* ================================ */
+/* 博客全局样式美化：毛玻璃亚克力风格 */
+/* ================================ */
+:root {
+  --trans-light: rgba(255, 255, 255, 0.88);
+  --trans-dark: rgba(25, 25, 25, 0.88);
+  --border-style: 1px solid rgb(169, 169, 169);
+  --backdrop-filter: blur(5px) saturate(150%);
+}
+
+/* 首页文章卡片 */
+#recent-posts > .recent-post-item {
+  background: var(--trans-light);
+  backdrop-filter: var(--backdrop-filter);
+  border-radius: 25px;
+  border: var(--border-style);
+}
+
+/* 侧边栏卡片 */
+#aside-content .card-widget {
+  background: var(--trans-light);
+  backdrop-filter: var(--backdrop-filter);
+  border-radius: 18px;
+  border: var(--border-style);
+}
+
+/* 文章页、归档、单页面 */
+div#post,
+div#page,
+div#archive {
+  background: var(--trans-light);
+  backdrop-filter: var(--backdrop-filter);
+  border: var(--border-style);
+  border-radius: 20px;
+}
+
+/* 导航栏 */
+#page-header.nav-fixed #nav {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: var(--backdrop-filter);
+}
+
+[data-theme="dark"] #page-header.nav-fixed #nav {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* 夜间模式 */
+[data-theme="dark"] #recent-posts > .recent-post-item,
+[data-theme="dark"] #aside-content .card-widget,
+[data-theme="dark"] div#post,
+[data-theme="dark"] div#archive,
+[data-theme="dark"] div#page {
+  background: var(--trans-dark);
+}
+
+/* 夜间模式遮罩去掉 */
+[data-theme="dark"] #footer::before,
+[data-theme="dark"] #page-header::before {
+  background: transparent !important;
+}
+
+/* 阅读模式 */
+.read-mode #aside-content .card-widget {
+  background: rgba(158, 204, 171, 0.5) !important;
+}
+.read-mode div#post {
+  background: rgba(158, 204, 171, 0.5) !important;
+}
+
+/* 夜间模式阅读模式 */
+[data-theme="dark"] .read-mode #aside-content .card-widget,
+[data-theme="dark"] .read-mode div#post {
+  background: rgba(25, 25, 25, 0.9) !important;
+  color: #ffffff;
+}
+

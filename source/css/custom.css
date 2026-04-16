@@ -1,0 +1,262 @@
+/*
+ * 全站视觉变量：页脚使用独立背景，不再和页面主背景混在一起。
+ */
+:root {
+    --footer-bg-start: rgba(22, 34, 54, 0.92);
+    --footer-bg-end: rgba(40, 60, 92, 0.9);
+    --footer-text-color: #f6f8ff;
+    --footer-muted-color: rgba(246, 248, 255, 0.82);
+}
+
+/* 保留头图区透明效果 */
+#page-header {
+    background-color: transparent;
+}
+
+/* 页脚独立背景与层次 */
+#footer {
+    position: relative;
+    overflow: hidden;
+    margin-top: 2.25rem;
+    background: linear-gradient(125deg, var(--footer-bg-start), var(--footer-bg-end)) !important;
+    box-shadow: 0 -10px 30px rgba(10, 20, 36, 0.22);
+}
+
+#footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 15% 18%, rgba(255, 255, 255, 0.16), transparent 34%),
+        radial-gradient(circle at 80% 72%, rgba(120, 180, 255, 0.22), transparent 42%);
+    pointer-events: none;
+}
+
+#footer .footer-other {
+    position: relative;
+    z-index: 1;
+    color: var(--footer-text-color);
+}
+
+#footer .copyright,
+#footer .footer_custom_text,
+#footer #workboard,
+#footer #ghbdages {
+    color: var(--footer-muted-color) !important;
+}
+
+#footer a {
+    color: #ffffff !important;
+}
+
+/* 兼容 footer_beautify 注入后的徽章间距 */
+#footer #ghbdages {
+    margin: 0.6rem auto 0;
+    text-align: center;
+}
+
+/* 白天/黑夜模式都保持页面主背景无额外遮罩 */
+#web_bg:before {
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+[data-theme="dark"] #web_bg:before {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* 留言板页面与页脚留出安全间距，避免视觉挤压 */
+#maincontent {
+    margin-bottom: 3.2rem;
+}
+
+/* 修复移动端 violet 留言板固定宽度导致的溢出与排版错位 */
+@media screen and (max-width: 600px) {
+    #maincontent {
+        width: calc(100vw - 24px) !important;
+        margin: 12px auto 2.8rem !important;
+    }
+
+    #form-wrap,
+    #envelope {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #form-wrap,
+    #form-wrap:hover {
+        height: auto !important;
+        top: 0 !important;
+    }
+
+    #envelope {
+        padding-top: 22vw !important;
+    }
+
+    .formmain {
+        width: 100% !important;
+    }
+}
+
+@font-face {
+  font-family: 'YSHST';
+  src: url('/font/YOUSHEhaoshenti.woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ====================================== */
+/* 导航栏居中 + 横向子菜单 魔改（店长同款） */
+/* ====================================== */
+
+/* 一级菜单居中 */
+#nav .menus_items {
+  position: absolute !important;
+  width: fit-content !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* 子菜单横向展示 */
+#nav .menus_items .menus_item:hover .menus_item_child {
+  display: flex !important;
+}
+
+/* 子菜单居中修正（适配大多数导航）*/
+.menus_item_child {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* 隐藏导航栏搜索按钮文字（只留图标）*/
+#search-button span {
+  display: none !important;
+}
+
+/* ====================================== */
+/* 黑夜霓虹灯 2.0（纯CSS · 店长同款） */
+/* ====================================== */
+
+/* 日间模式不生效 */
+[data-theme="light"] #site-name,
+[data-theme="light"] #site-title,
+[data-theme="light"] #site-subtitle,
+[data-theme="light"] #post-info {
+  animation: none;
+}
+/* 夜间模式生效 */
+[data-theme="dark"] #site-name,
+[data-theme="dark"] #site-title {
+  animation: light_15px 10s linear infinite;
+}
+[data-theme="dark"] #site-subtitle {
+  animation: light_10px 10s linear infinite;
+}
+[data-theme="dark"] #post-info {
+  animation: light_5px 10s linear infinite;
+}
+/* 关键帧描述 */
+@keyframes light_15px {
+  0% {
+    text-shadow: #5636ed 0 0 15px;
+  }
+  12.5% {
+    text-shadow: #11ee5e 0 0 15px;
+  }
+  25% {
+    text-shadow: #f14747 0 0 15px;
+  }
+  37.5% {
+    text-shadow: #f1a247 0 0 15px;
+  }
+  50% {
+    text-shadow: #f1ee47 0 0 15px;
+  }
+  62.5% {
+    text-shadow: #b347f1 0 0 15px;
+  }
+  75% {
+    text-shadow: #002afa 0 0 15px;
+  }
+  87.5% {
+    text-shadow: #ed709b 0 0 15px;
+  }
+  100% {
+    text-shadow: #39c5bb 0 0 15px;
+  }
+}
+@keyframes light_10px {
+  0% { text-shadow: #5636ed 0 0 10px; }
+  12.5% { text-shadow: #11ee5e 0 0 10px; }
+  25% { text-shadow: #f14747 0 0 10px; }
+  37.5% { text-shadow: #f1a247 0 0 10px; }
+  50% { text-shadow: #f1ee47 0 0 10px; }
+  62.5% { text-shadow: #b347f1 0 0 10px; }
+  75% { text-shadow: #002afa 0 0 10px; }
+  87.5% { text-shadow: #ed709b 0 0 10px; }
+  100% { text-shadow: #39c5bb 0 0 10px; }
+}
+@keyframes light_5px {
+  0% { text-shadow: #5636ed 0 0 5px; }
+  12.5% { text-shadow: #11ee5e 0 0 5px; }
+  25% { text-shadow: #f14747 0 0 5px; }
+  37.5% { text-shadow: #f1a247 0 0 5px; }
+  50% { text-shadow: #f1ee47 0 0 5px; }
+  62.5% { text-shadow: #b347f1 0 0 5px; }
+  75% { text-shadow: #002afa 0 0 5px; }
+  87.5% { text-shadow: #ed709b 0 0 5px; }
+  100% { text-shadow: #39c5bb 0 0 5px; }
+}
+
+/* 侧边栏个人信息卡片 动态线性渐变色（含动画+夜间模式适配） */
+#aside-content > .card-widget.card-info {
+  /* 基础渐变颜色组（可自行替换成喜欢的色值） */
+  background: linear-gradient(-45deg, #e8d8b9, #eccec5, #a3e9eb, #bdbdf0, #eec1ea);
+  /* 渐变背景铺满，避免重复 */
+  background-size: 400% 400%;
+  /* 动态渐变动画：15秒循环，线性速度，无限重复 */
+  animation: cardGradient 45s ease infinite;
+  /* 消除渐变边缘与卡片的锯齿感 */
+  background-clip: border-box;
+  border: none !important; /* 隐藏原卡片边框，让渐变更自然 */
+}
+
+/* 夜间模式单独配色（避免亮色渐变在黑夜太刺眼，可自行调整） */
+[data-theme="dark"] #aside-content > .card-widget.card-info {
+  background: linear-gradient(-45deg, #2c3e50, #4a6990, #2d5b79, #4a4e69, #6a4c93);
+  background-size: 400% 400%;
+  animation: cardGradient 60s ease infinite; /* 夜间动画稍慢，更柔和 */
+}
+
+/* 动态渐变核心关键帧：背景位置循环移动，实现渐变流动效果 */
+@keyframes cardGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 可选优化：卡片内文字/图标配色适配，避免渐变背景导致文字看不清 */
+#aside-content .card-info .info-content > div,
+#aside-content .card-info .author-info__name,
+#aside-content .card-info .author-info__description,
+#aside-content .card-info .card-info-data > .item,
+#aside-content .card-info .card-info-social > a {
+  color: #333 !important; /* 日间模式文字深色调，保证可读性 */
+}
+[data-theme="dark"] #aside-content .card-info .info-content > div,
+[data-theme="dark"] #aside-content .card-info .author-info__name,
+[data-theme="dark"] #aside-content .card-info .author-info__description,
+[data-theme="dark"] #aside-content .card-info .card-info-data > .item,
+[data-theme="dark"] #aside-content .card-info .card-info-social > a {
+  color: #f5f5f5 !important; /* 夜间模式文字浅色调，保证可读性 */
+}
+/* 强制全站使用自定义字体 */
+body, .site-name, #site-title {
+  font-family: 'YSHST', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif !important;
+}
