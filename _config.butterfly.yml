@@ -4,16 +4,16 @@
 # --------------------------------------
 
 menu:
-  首页: / || fas fa-home
-  归档: /archives/ || fas fa-archive
-  标签: /tags/ || fas fa-tags
-  分类: /categories/ || fas fa-folder-open
-  更多 || fas fa-list || hide:
-    音乐: /music/ || fas fa-music
-    电影: /movies/ || fas fa-film
-    留言: /comments/ || fas fa-comment
-  友链: /link/ || fas fa-link
-  关于: /about/ || fas fa-user
+  首页: / || icon-shouye || faa-tada
+  归档: /archives || icon-guidang || faa-tada
+  分类: /categories || icon-fenlei || faa-tada
+  标签: /tags || icon-biaoqian || faa-tada
+  更多 || icon-more-br || faa-tada || hide:
+    音乐: /music/ || icon-yinle || faa-tada
+    电影: /movies/ || icon-dianying || faa-tada
+    留言: /comments/ || icon-pinglun || faa-tada
+  友链: /link/ || icon-youlianguanli || faa-tada
+  关于: /about/ || icon-guanyu || faa-tada
 # Code blocks
 code_blocks:
   theme: darker
@@ -215,10 +215,12 @@ inject:
     - <link rel="icon" href="/img/favicon.ico">
     - <link rel="stylesheet" href="/css/custom.css">
     - <link rel="stylesheet" href="/css/universe.css">
+    - <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5162321_02l435p6df9.css" media="defer" onload="this.media='all'">
+    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css" media="defer" onload="this.media='all'">
   bottom:
     - <canvas id="universe"></canvas>
     - <script defer src="/js/universe.js"></script>
-
+    - <script async src="//at.alicdn.com/t/c/font_5162321_02l435p6df9.js"></script>
 # ------------------------------
 # 站内搜索
 # ------------------------------
@@ -361,79 +363,5 @@ tag_plugins:
     carousel: false
     tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.3.5/lib/tag_plugins.css
 
-/* ================================ */
-/* 博客全局样式美化：毛玻璃亚克力风格 */
-/* ================================ */
-:root {
-  --trans-light: rgba(255, 255, 255, 0.88);
-  --trans-dark: rgba(25, 25, 25, 0.88);
-  --border-style: 1px solid rgb(169, 169, 169);
-  --backdrop-filter: blur(5px) saturate(150%);
-}
 
-/* 首页文章卡片 */
-#recent-posts > .recent-post-item {
-  background: var(--trans-light);
-  backdrop-filter: var(--backdrop-filter);
-  border-radius: 25px;
-  border: var(--border-style);
-}
-
-/* 侧边栏卡片 */
-#aside-content .card-widget {
-  background: var(--trans-light);
-  backdrop-filter: var(--backdrop-filter);
-  border-radius: 18px;
-  border: var(--border-style);
-}
-
-/* 文章页、归档、单页面 */
-div#post,
-div#page,
-div#archive {
-  background: var(--trans-light);
-  backdrop-filter: var(--backdrop-filter);
-  border: var(--border-style);
-  border-radius: 20px;
-}
-
-/* 导航栏 */
-#page-header.nav-fixed #nav {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: var(--backdrop-filter);
-}
-
-[data-theme="dark"] #page-header.nav-fixed #nav {
-  background: rgba(0, 0, 0, 0.7) !important;
-}
-
-/* 夜间模式 */
-[data-theme="dark"] #recent-posts > .recent-post-item,
-[data-theme="dark"] #aside-content .card-widget,
-[data-theme="dark"] div#post,
-[data-theme="dark"] div#archive,
-[data-theme="dark"] div#page {
-  background: var(--trans-dark);
-}
-
-/* 夜间模式遮罩去掉 */
-[data-theme="dark"] #footer::before,
-[data-theme="dark"] #page-header::before {
-  background: transparent !important;
-}
-
-/* 阅读模式 */
-.read-mode #aside-content .card-widget {
-  background: rgba(158, 204, 171, 0.5) !important;
-}
-.read-mode div#post {
-  background: rgba(158, 204, 171, 0.5) !important;
-}
-
-/* 夜间模式阅读模式 */
-[data-theme="dark"] .read-mode #aside-content .card-widget,
-[data-theme="dark"] .read-mode div#post {
-  background: rgba(25, 25, 25, 0.9) !important;
-  color: #ffffff;
-}
 
