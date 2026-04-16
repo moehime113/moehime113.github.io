@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Echo`s home
 subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+description: A personal blog for self-introduction and sharing.
+keywords: self-introduction, personal blog, sharing
+author: Echo
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -105,3 +105,8 @@ deploy:
   repo: git@github.com:moehime113/moehime113.github.io.git
   branch: gh-pages
   ignore_hidden: false
+
+search:
+ path: search.xml
+ filed: post
+ content: true

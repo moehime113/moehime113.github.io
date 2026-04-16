@@ -111,3 +111,244 @@ error_404:
   enable: true
   subtitle: "页面没有找到"
   background: https://source.fomal.cc/img/404_bg.webp
+
+# Menu
+menu:
+  首页: / || fas fa-home
+  归档: /archives/ || fas fa-archive
+  标签: /tags/ || fas fa-tags
+  分类: /categories/ || fas fa-folder-open
+  更多||fas fa-list||hide:
+    音乐: /music/ || fas fa-music
+    影视: /movies/ || fas fa-video
+    图片: /photos/ || fas fa-image
+  友链: /link/ || fas fa-link
+  关于: /about/ || fas fa-heart
+
+# Code
+highlight_theme: darker
+highlight_copy: true
+highlight_shrink: true
+highlight_height_limit: 200
+
+# Social
+social:
+  fab fa-github: https://github.com/moehime113 || GitHub
+  fab fa-envelope: mailto:1014368305@qq.com || Email
+
+# 顶部图
+index_img: https://source.fomal.cc/img/index_bg.webp
+default_top_img: https://source.fomal.cc/img/post_bg.webp
+
+# 文章封面
+cover:
+ # 是否显示文章封面
+ index_enable: true
+ aside_enable: true
+ archives_enable: true
+ #封面显示位置
+ position: both
+ #封面默认显示
+ default_cover: 
+   -1.img
+   -2.img
+   -3.img
+
+# 文章页相关配置
+# 文章信息显示
+post_meta:
+ page:
+  date_type: both
+  date_format: relative
+  categories: true
+  tags: true
+  label: true
+ post:
+  date_type: both
+  date_format: relative
+  categories: true
+  tags: true
+  label: true
+#文章版权和协议许可
+post_copyright:
+enable: true
+decode: true
+author_href: https://github.com/moehime113
+license: CC BY-NC-SA 4.0
+license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+#文章打赏
+reward:
+ enable: true
+ QR_code:
+  -img: /img/wechat_pay.png
+   link:
+   text: wechat
+  -img: /img/alipay.jpg
+   link:
+   text:alipay
+# 文章目录
+toc:
+ post: true
+ page: false
+ number: true
+ expand: false
+ style_simple: false
+# 相关文章推荐
+related_posts:
+ enable: true
+ limit: 6
+ date_type: created
+# 文章分页按钮
+post_pagination:
+ enable: true
+ prev_text: 上一篇
+ next_text: 下一篇
+ # 头像
+ avatar:
+  img: /img/head.jpg
+  effect:false
+# 文章内容复制相关配置
+copy:
+  enable: true
+  copyright: 
+   enable: true
+   limit_count: 100
+
+# Footer设置
+footer:
+  owner:
+   enable: true
+   since: 2026
+  custom: 'Powered by <a href=" 
+  copyright: false
+
+# 语言切换
+languages:
+  enable: true
+  type: dropdown # or 'select'
+  options:
+    - name: 简体中文
+      code: zh-CN
+      flag: cn
+    - name: 日本語
+      code: ja
+      flag: jp
+
+# 夜间模式
+darkmode:
+ enable: false
+ button: true
+# 阅读模式
+readmode: true
+
+#侧边栏设置
+aside:
+ enable:true
+ hide: false
+ button: true:
+ mobile: true
+ position:right
+ display:
+ archive: true
+ tag: true
+ category: true
+ recent_posts: true
+ recent_comments: true
+
+# 访问人数
+busuanzi:
+  site_uv: true
+  site_pv: true
+  page_pv: true
+
+# 运行时间
+runtiimehow:
+ enable:false
+ publish_date: 2026-04-16
+
+# 最新评论
+newest_comments:
+ enable: true
+ limit: 6
+ storage: 10
+ avatar: true
+
+# 网站背景
+background: https://source.fomal.cc/img/bg.webp
+
+#打字效果
+activate_power_mode:
+  enable: false
+  colorful: true
+  shake: true
+  mobile: false
+
+# footer 背景
+footer_bg: true # 是否显示与图片背景一致
+# 背景特效
+canvas_fluttering_ribbon:
+ enable: true
+ mobile: true
+
+# 鼠标点击效果
+fireworks:
+ enable: true
+ zlndex: 9999
+ mobile: false
+
+ # 自定义字体和大小
+ #全局字体
+ font:
+  global-font-size: '15px'
+  code-font-size : '14px'
+  global-font-family: 'Microsoft YaHei', sans-serif
+  code-font-family: 'Source Code Pro', monospace
+
+# blog标题字体
+blog_title_font:
+  font_link:
+  font_family: var(--font-family-blog-title)
+
+# 网站副标题
+subtitle: 
+ enable: true
+ effect: true # 打字效果
+ loop: true
+
+ #页面加载动画preloader
+ preloader:true
+
+ # 字数统计
+ wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
+
+# 图片大图查看模式
+fancybox: true
+
+# Pjax 
+pjax:
+ enable: true
+ exclude_url: /\/(archives|tags|categories|link|about)\/?/
+ exclude_post: false
+ exclude_page: false
+ exclude_category: false  
+
+ # Inject 
+inject:
+  head: 
+   - <link rel="icon" href="/img/favicon.ico">
+  body_end:
+   - <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+   - <script>
+      particlesJS.load('particles-js', '/particles.json', function() {  
+        console.log('particles.js loaded - callback');
+      });
+    </script>
+
+# 本地搜索系统
+local_search:
+  - enable: falser
+  + enable: true
