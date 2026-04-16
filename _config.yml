@@ -104,3 +104,4 @@ deploy:
   type: git
   repo: git@github.com:moehime113/moehime113.github.io.git
   branch: gh-pages
+  ignore_hidden: false
