@@ -1086,6 +1086,8 @@ svg.social_icon {
   transition: 0.4s;
 }
 
+/* 已按需求移除信息卡悬浮彩带效果 */
+
 /* 滚动条样式 */
 ::-webkit-scrollbar {
   width: 8px;
