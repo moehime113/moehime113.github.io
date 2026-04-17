@@ -47,6 +47,9 @@ CDN:
     lazyload: https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.3.1/lazyload.iife.min.js
     instantpage: https://cdn.bootcdn.net/ajax/libs/instant.page/5.1.0/instantpage.min.js
     typed: https://cdn.bootcdn.net/ajax/libs/typed.js/2.0.12/typed.min.js
+    egjs_infinitegrid: https://cdn1.tianli0.top/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js
+    fancybox: https://cdn1.tianli0.top/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.umd.js
+    fancybox_css: https://cdn1.tianli0.top/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.css
     fancybox_css_v4: https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.min.css
     fancybox_v4: https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.umd.min.js
     fontawesomeV6: https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css
