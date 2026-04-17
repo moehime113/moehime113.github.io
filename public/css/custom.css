@@ -208,37 +208,17 @@
   100% { text-shadow: #39c5bb 0 0 5px; }
 }
 
-/* 侧边栏个人信息卡片 动态线性渐变色（含动画+夜间模式适配） */
-#aside-content > .card-widget.card-info {
-  /* 基础渐变颜色组（可自行替换成喜欢的色值） */
-  background: linear-gradient(-45deg, #e8d8b9, #eccec5, #a3e9eb, #bdbdf0, #eec1ea);
-  /* 渐变背景铺满，避免重复 */
-  background-size: 400% 400%;
-  /* 动态渐变动画：15秒循环，线性速度，无限重复 */
-  animation: cardGradient 45s ease infinite;
-  /* 消除渐变边缘与卡片的锯齿感 */
-  background-clip: border-box;
-  border: none !important; /* 隐藏原卡片边框，让渐变更自然 */
-}
-
-/* 夜间模式单独配色（避免亮色渐变在黑夜太刺眼，可自行调整） */
+/* 个人信息卡片背景图（替代渐变色卡片） */
+[data-theme="light"] #aside-content > .card-widget.card-info,
 [data-theme="dark"] #aside-content > .card-widget.card-info {
-  background: linear-gradient(-45deg, #2c3e50, #4a6990, #2d5b79, #4a4e69, #6a4c93);
-  background-size: 400% 400%;
-  animation: cardGradient 60s ease infinite; /* 夜间动画稍慢，更柔和 */
-}
-
-/* 动态渐变核心关键帧：背景位置循环移动，实现渐变流动效果 */
-@keyframes cardGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 45%, rgba(255, 255, 255, 0.92) 100%),
+    url(/img/back3.jpg);
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-size: 100% auto;
+  background-position: top center;
+  border: none !important;
 }
 
 /* 可选优化：卡片内文字/图标配色适配，避免渐变背景导致文字看不清 */
@@ -374,6 +354,120 @@ div#archive {
 [data-theme="dark"] .read-mode div#post {
   background: rgba(25, 25, 25, 0.9) !important;
   color: #ffffff;
+}
+
+/* ====================================== */
+/* 宽屏适配 + 仅首页显示侧边栏（自用） */
+/* ====================================== */
+
+/* 全局宽度 */
+.layout {
+  max-width: 1400px;
+}
+
+/* 侧边卡片栏宽度 */
+.aside-content {
+  max-width: 318px;
+  min-width: 300px;
+}
+
+/* 平板尺寸自适应 */
+@media screen and (max-width: 900px) {
+  .aside-content {
+    max-width: none !important;
+    min-width: 0 !important;
+    padding: 0 5px;
+  }
+}
+
+/* 非首页隐藏侧边栏：利用主题头图 class 区分首页/非首页 */
+#body-wrap #page-header.not-home-page + #content-inner .aside-content {
+  display: none !important;
+}
+
+/* 非首页内容区拉满宽度 */
+#body-wrap #page-header.not-home-page + #content-inner #archive,
+#body-wrap #page-header.not-home-page + #content-inner #page,
+#body-wrap #page-header.not-home-page + #content-inner #category,
+#body-wrap #page-header.not-home-page + #content-inner #tag,
+#body-wrap #page-header.not-home-page + #content-inner #post {
+  width: 100% !important;
+}
+
+/* 主页文章三栏（店长思路 + 当前主题结构微调版） */
+#body-wrap #page-header.full_page + #content-inner #recent-posts.recent-posts .recent-post-items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+#body-wrap #page-header.full_page + #content-inner #recent-posts.recent-posts .recent-post-item {
+  width: auto !important;
+  margin: 0 !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+#body-wrap #page-header.full_page + #content-inner #recent-posts .recent-post-item .post_cover {
+  width: 100% !important;
+  height: 210px;
+  margin: 0 !important;
+  border-radius: 0;
+}
+
+#body-wrap #page-header.full_page + #content-inner #recent-posts .recent-post-item .post_cover a,
+#body-wrap #page-header.full_page + #content-inner #recent-posts .recent-post-item .post_cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#body-wrap #page-header.full_page + #content-inner #recent-posts .recent-post-item .recent-post-info {
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 14px 16px 16px;
+}
+
+#body-wrap #page-header.full_page + #content-inner #recent-posts .recent-post-item .article-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 44px;
+  margin-bottom: 8px;
+}
+
+#body-wrap #page-header.full_page + #content-inner #recent-posts .recent-post-item .content {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 88px;
+}
+
+#body-wrap #page-header.full_page + #content-inner #recent-posts nav#pagination {
+  grid-column: 1 / -1;
+}
+
+@media screen and (max-width: 1068px) {
+  #body-wrap #page-header.full_page + #content-inner #recent-posts.recent-posts .recent-post-items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #body-wrap #page-header.full_page + #content-inner #recent-posts.recent-posts .recent-post-items {
+    grid-template-columns: 1fr;
+  }
+
+  #body-wrap #page-header.full_page + #content-inner #recent-posts .recent-post-item .post_cover {
+    height: 200px;
+  }
 }
 
 /* ====================================== */
@@ -543,3 +637,285 @@ svg.social_icon {
   color: var(--font-color);
   opacity: 0.8;
 }
+
+/* ================================ */
+/* TZY 同款页脚（适配当前站点） */
+/* ================================ */
+#footer-wrap {
+  padding: 20px;
+}
+
+#ft {
+  max-width: 1200px;
+  margin: 0 auto 12px;
+  display: flex;
+  color: rgb(255 255 255 / 85%) !important;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.ft-item-1,
+.ft-item-2 {
+  display: flex;
+  height: 100%;
+  padding: 2px 14px;
+}
+
+.ft-item-1 {
+  flex-direction: column;
+  flex: 2;
+}
+
+.ft-item-2 {
+  flex: 1;
+  flex-direction: column;
+}
+
+.t-top {
+  display: flex;
+}
+
+.t-top .t-t-l {
+  display: flex;
+  flex-direction: column;
+  flex: 1.4;
+  margin-right: 10px;
+}
+
+.t-top .t-t-l .bg-ad {
+  width: 85%;
+  border-radius: 10px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.btn-xz-box {
+  margin-top: 10px;
+}
+
+.btn-xz {
+  display: block;
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  text-align: center;
+  line-height: 2.4;
+  margin: 8px 0;
+}
+
+.btn-xz:hover {
+  text-decoration: none !important;
+}
+
+.btn-xz-box:hover .btn-xz {
+  background-color: var(--text-bg-hover);
+}
+
+.t-top .t-t-r {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ft-links {
+  padding: 0 14px;
+  list-style: none;
+  margin-top: 0 !important;
+}
+
+.ft-links li {
+  margin-bottom: 8px;
+}
+
+.ft-links li a {
+  display: inline-block !important;
+  width: 50%;
+}
+
+.ft-links li a:hover {
+  text-decoration: none !important;
+  color: var(--theme-color) !important;
+}
+
+.ft-item-2 .ft-img-group {
+  width: 100%;
+}
+
+.ft-t {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.t-l-t {
+  padding-left: 14px;
+}
+
+.ft-item-2 .ft-img-group .img-group-item {
+  display: inline-block;
+  width: 30%;
+  margin-right: 3%;
+  margin-bottom: 8px;
+}
+
+.ft-item-2 .ft-img-group .img-group-item a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.ft-item-2 .ft-img-group .img-group-item a img {
+  width: 100%;
+  max-height: 76px;
+  min-height: 76px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 0.25s ease;
+}
+
+.ft-item-2 .ft-img-group .img-group-item a img:hover {
+  border: 2px solid var(--theme-color);
+  transform: translateY(-2px);
+}
+
+#footer-wrap a {
+  border-radius: 30px;
+}
+
+#workboard {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--footer-muted-color) !important;
+}
+
+#workboard .boardsign {
+  max-width: 260px;
+}
+
+#ghbdages {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#ghbdages .github-badge {
+  display: inline-block;
+  margin: 5px;
+}
+
+#ghbdages .github-badge img {
+  height: 22px;
+}
+
+#heartbeat {
+  color: #ff4d4f;
+  animation: iconAnimate 1s ease-in-out infinite;
+}
+
+@keyframes iconAnimate {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  10%,
+  30% {
+    transform: scale(0.9);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: scale(1.1);
+  }
+  50%,
+  70% {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ft-item-1,
+  .ft-item-2 {
+    flex-basis: 100% !important;
+  }
+
+  .t-top .t-t-l .bg-ad {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .t-top {
+    flex-wrap: wrap;
+  }
+
+  .t-top .t-t-l,
+  .t-top .t-t-r {
+    flex-basis: 100% !important;
+  }
+
+  .t-top .t-t-r {
+    margin-top: 16px;
+  }
+
+  .ft-item-2 .ft-img-group .img-group-item {
+    width: 48%;
+    margin-right: 2%;
+  }
+}
+
+/* ================================ */
+/* 信息卡片头像状态 */
+/* ================================ */
+.card-widget .card-info-avatar {
+  display: inline-block;
+  position: relative;
+}
+
+.card-info-avatar .author-status-box {
+  position: absolute;
+  bottom: 0;
+  left: calc(100% - 28px);
+  width: 28px;
+  height: 28px;
+  border: 1px solid #d0d7de;
+  border-radius: 2em;
+  background-color: #f8f8f8f8;
+  transition: 0.4s;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .card-info-avatar .author-status-box {
+  background-color: #222222f2;
+  border: 1px solid #5c6060;
+}
+
+.card-info-avatar .author-status-box .author-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 5px;
+}
+
+.card-info-avatar .author-status-box:hover {
+  width: 105px;
+}
+
+.card-info-avatar .author-status-box:hover .author-status .author-status-text {
+  width: 105px;
+  margin-left: 4px;
+}
+
+.card-info-avatar .author-status-box .author-status .author-status-text {
+  width: 0;
+  font-size: 12px;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: 0.4s;
+}
+
+/* 已按需求移除信息卡悬浮彩带效果 */
+

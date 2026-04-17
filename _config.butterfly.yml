@@ -10,6 +10,7 @@ menu:
   标签: /tags || icon-biaoqian || faa-tada
   更多 || icon-gengduo || faa-tada || hide:
     音乐: /music/ || icon-yinle || faa-tada
+    统计: /charts/ || icon-tubiao || faa-tada
     电影: /movies/ || icon-dianying || faa-tada
     留言: /comments/ || icon-liuyan || faa-tada
   友链: /link/ || icon-youlian || faa-tada
@@ -105,6 +106,15 @@ related_post:
   limit: 6
   date_type: created
 
+# Display the article introduction on homepage
+# 1: description
+# 2: both (if the description exists, it will show description, or show the auto_excerpt)
+# 3: auto_excerpt
+# false: do not show the article introduction
+index_post_content:
+  method: 2
+  length: 500
+
 # 1 means next/prev links in chronological order
 post_pagination: 1
 
@@ -125,8 +135,50 @@ footer:
     enable: false
 
   custom_text: |
-    <div style="display:flex;align-items:center;justify-content:center;gap:16px;font-size:14px;margin-top:8px;">
-      <span>Powered by <a target="_blank" href="https://hexo.io/" title="Hexo">Hexo</a> &amp; <a target="_blank" href="https://butterfly.js.org/" title="Butterfly">Butterfly</a></span> <span class="footer-separator">
+    <div id="footer-wrap">
+      <div id="ft">
+        <div class="ft-item-1">
+          <div class="t-top">
+            <div class="t-t-l">
+              <p class="ft-t t-l-t">格言 🧬</p>
+              <div class="bg-ad">
+                <div></div>
+                <div class="btn-xz-box">
+                  <a class="btn-xz" href="/charts/">查看本站统计</a>
+                </div>
+              </div>我与生活对望，一半是烟火日常，一半是诗意坦荡。
+            </div>
+            <div class="t-t-r">
+              <p class="ft-t t-l-t">猜你想看 💡</p>
+              <ul class="ft-links">
+                <li><a href="/archives/">文章归档</a><a href="/categories/">文章分类</a></li>
+                <li><a href="/tags/">文章标签</a><a href="/comments/">给我留言</a></li>
+                <li><a href="/link/">友情链接</a><a href="/music/">音乐页面</a></li>
+                <li><a href="/charts/">站点统计</a><a href="/about/">关于作者</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="ft-item-2">
+          <p class="ft-t">推荐友链 ⌛</p>
+          <div class="ft-img-group">
+            <div class="img-group-item"><a href="https://butterfly.js.org/" title="Butterfly"><img src="/img/cover1.jpg" alt="Butterfly"></a></div>
+            <div class="img-group-item"><a href="https://hexo.io/" title="Hexo"><img src="/img/cover2.jpg" alt="Hexo"></a></div>
+            <div class="img-group-item"><a href="https://github.com/moehime113" title="Echo GitHub"><img src="/img/head.jpg" alt="Echo"></a></div>
+            <div class="img-group-item"><a href="/link/" title="我的友链"><img src="/img/back1.jpg" alt="友链"></a></div>
+            <div class="img-group-item"><a href="/music/" title="音乐"><img src="/img/back2.png" alt="音乐"></a></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="workboard"></div>
+
+      <p id="ghbdages">
+        <a class="github-badge" target="_blank" href="https://hexo.io/" title="博客框架 Hexo"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" alt="Hexo"></a>
+        <a class="github-badge" target="_blank" href="https://butterfly.js.org/" title="主题 Butterfly"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" alt="Butterfly"></a>
+        <a class="github-badge" target="_blank" href="https://github.com/moehime113" title="源码仓库"><img src="https://img.shields.io/badge/Source-GitHub-d021d6?style=flat&logo=github" alt="GitHub"></a>
+        <a class="github-badge" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="License"></a>
+      </p>
     </div>
   runtime:
     enable: false
@@ -204,7 +256,7 @@ activate_power_mode:
 footer_bg: false
 
 canvas_fluttering_ribbon:
-  enable: true
+  enable: false
   mobile: true
 
 fireworks:
@@ -243,14 +295,27 @@ inject:
   head:
     - <link rel="icon" href="/img/favicon.ico">
     - <link rel="stylesheet" href="/css/custom.css">
-    - <link rel="stylesheet" href="/css/universe.css">
     - <link rel="stylesheet" href="/css/readPercent.css">
+    - <link rel="stylesheet" href="/css/kslink.css">
+    - <link rel="stylesheet" href="/css/sun_moon.css">
+    - <script src="https://npm.elemecdn.com/echarts@5.5.1/dist/echarts.min.js"></script>
+    - <link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css">
     - <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5162325_s9ow3cmoryo.css" media="defer" onload="this.media='all'">
     - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css" media="defer" onload="this.media='all'">
   bottom:
-    - <canvas id="universe"></canvas>
-    - <script defer src="/js/universe.js"></script>
+    - <script defer data-pjax src="/js/sakura.js"></script>
+    - <script defer data-pjax src="/js/author-status.js"></script>
+    - <script defer data-pjax src="/js/runtime.js"></script>
     - <script defer data-pjax src="/js/readPercent.js"></script>
+    - <script defer data-pjax src="/js/kslink.js"></script>
+    - <script async src="https://cdn1.tianli0.top/npm/vue@2.6.14/dist/vue.min.js"></script>
+    - <script async src="https://cdn1.tianli0.top/npm/element-ui@2.15.6/lib/index.js"></script>
+    - <script defer src="/js/f12-notify.js"></script>
+    - <script defer data-pjax src="/js/sun_moon.js"></script>
+    - <script defer src="/js/charts-data.js"></script>
+    - <script defer data-pjax src="/js/charts.js"></script>
+    - <script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+    - <script defer src="/js/share.js"></script>
     - <script async src="//at.alicdn.com/t/c/font_5162325_s9ow3cmoryo.js"></script>
 # ------------------------------
 # 站内搜索
@@ -282,21 +347,6 @@ envelope_comment:
     index: bottom
     post: bottom
     page: bottom
-
-# ------------------------------
-# 页脚增强
-# ------------------------------
-footer_beautify:
-  enable:
-    timer: false  # 关闭计时器
-    bdage: false  # 关闭徽标
-  priority: 5
-  enable_page: all
-  layout:
-    type: id
-    name: footer
-    index: 0
-
 
   # 首页分类磁贴(店长同款)
 categoryBar:
