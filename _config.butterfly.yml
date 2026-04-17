@@ -26,7 +26,6 @@ social:
   微信: /img/wechat.jpg || icon-weixin || faa-tada
   B站: https://space.bilibili.com/1978757278 || icon-a-Bzhan2x || faa-tada
   QQ: /img/qq.jpg || icon-QQ || faa-tada
-  GitHub: https://github.com/moehime113 || icon-a-github_github || faa-tada
 
 # Global images
 favicon: /img/favicon.ico
@@ -141,10 +140,18 @@ aside:
   enable: true
   hide: false
   button: true
-  mobile: true
+  mobile: false
   position: right
   display:
     archive: true
+  card_author:
+    enable: true
+    description: "Love life, love yourself.❤️"
+    button:
+      enable: true
+      icon: iconfont icon-a-github_github 
+      text: 前往小窝
+      link: https://github.com/moehime113
   card_recent_post:
     enable: true
   card_newest_comments:
