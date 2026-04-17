@@ -11,10 +11,12 @@
 
   // 你可以替换成自己的图片地址
   var sakuraImg = new Image();
-  sakuraImg.src = 'https://npm.elemecdn.com/tzy-blog/lib/img/other/sakura.png';
+  sakuraImg.src =
+    'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Cpath fill=%22%23ffc0cb%22 d=%22M32 8c8 0 14 6 14 14 0 5-2 9-5 12l-9 10-9-10c-3-3-5-7-5-12 0-8 6-14 14-14z%22/%3E%3Cpath fill=%22%23ff9db2%22 d=%22M32 13c5 0 9 4 9 9 0 3-1 6-3 8l-6 7-6-7c-2-2-3-5-3-8 0-5 4-9 9-9z%22/%3E%3C/svg%3E';
 
   var leafImg = new Image();
-  leafImg.src = 'https://img.cdn.nesxc.com/upload/wordpress/202202251325420webp';
+  leafImg.src =
+    'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Cpath fill=%22%23e79b57%22 d=%22M10 44c0-19 14-32 34-34 2 20-10 34-29 36l-5-2z%22/%3E%3Cpath fill=%22%23c97734%22 d=%22M16 42c9-3 18-11 25-22%22 stroke=%22%23c97734%22 stroke-width=%223%22 stroke-linecap=%22round%22 fill=%22none%22/%3E%3C/svg%3E';
 
   function random(min, max) {
     return Math.random() * (max - min) + min;
