@@ -31,7 +31,11 @@ social:
 favicon: /img/favicon.ico
 index_img: /img/cover1.jpg
 default_top_img: /img/cover2.jpg
-background: url(/img/black1.jpg)
+background:
+  default: url(/img/back1.jpg)
+  darkmode:
+  mobileday: url(/img/back2.jpg)
+  mobilenight:
 
 # A simple 404 page
 error_img:
@@ -122,7 +126,7 @@ footer:
 
   custom_text: |
     <div style="display:flex;align-items:center;justify-content:center;gap:16px;font-size:14px;margin-top:8px;">
-      <span>Powered by <a target="_blank" href="https://hexo.io/" title="Hexo">Hexo</a> &amp; <a target="_blank" href="https://butterfly.js.org/" title="Butterfly">Butterfly</a></span> <span class="footer-separator">|</span>
+      <span>Powered by <a target="_blank" href="https://hexo.io/" title="Hexo">Hexo</a> &amp; <a target="_blank" href="https://butterfly.js.org/" title="Butterfly">Butterfly</a></span> <span class="footer-separator">
     </div>
   runtime:
     enable: false
@@ -169,6 +173,25 @@ busuanzi:
   page_pv: true
 
 # ------------------------------
+# 评论系统
+# 说明：
+# 1) 文章页默认开启评论。
+# 2) 独立页面通过 front-matter 的 comments: true/false 控制。
+# ------------------------------
+comments:
+  use:
+  text: true
+  lazyload: false
+  count: false
+  card_post_count: false
+
+twikoo:
+  envId: https://your-twikoo-domain.example.com
+  region:
+  visitor: false
+  option:
+
+# ------------------------------
 # 视觉效果与界面细节
 # ------------------------------
 activate_power_mode:
@@ -194,8 +217,9 @@ subtitle:
   effect: true
 
 preloader:
-  enable: true
-  source: 1
+  enable: false
+  source: 2
+  pace_css_url: /css/progress_bar.css
 
 wordcount:
   enable: true
@@ -220,11 +244,13 @@ inject:
     - <link rel="icon" href="/img/favicon.ico">
     - <link rel="stylesheet" href="/css/custom.css">
     - <link rel="stylesheet" href="/css/universe.css">
+    - <link rel="stylesheet" href="/css/readPercent.css">
     - <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5162325_s9ow3cmoryo.css" media="defer" onload="this.media='all'">
     - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css" media="defer" onload="this.media='all'">
   bottom:
     - <canvas id="universe"></canvas>
     - <script defer src="/js/universe.js"></script>
+    - <script defer data-pjax src="/js/readPercent.js"></script>
     - <script async src="//at.alicdn.com/t/c/font_5162325_s9ow3cmoryo.js"></script>
 # ------------------------------
 # 站内搜索
@@ -367,6 +393,11 @@ tag_plugins:
     iconfont: false
     carousel: false
     tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.3.5/lib/tag_plugins.css
+
+# Inject the css and script (aplayer/meting)
+aplayerInject:
+  enable: true
+  per_page: false
 
 
 

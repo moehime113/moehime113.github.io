@@ -37,3 +37,19 @@ Hello，这是第一个标签页里的内容。
 嗨，这儿是第二个标签页的内容。
 <!-- endtab -->
 {% endtabs %}
+
+## 5. Bilibili 视频适配测试
+
+下面是一个 B 站 iframe 嵌入测试，使用 `.aspect-ratio` 自适应容器。
+
+<div align="center" class="aspect-ratio">
+	<iframe src="https://player.bilibili.com/player.html?aid=474023258&page=1&as_wide=1&high_quality=1&danmaku=0"
+		scrolling="no"
+		border="0"
+		frameborder="no"
+		framespacing="0"
+		high_quality="1"
+		danmaku="1"
+		allowfullscreen="true">
+	</iframe>
+</div>
