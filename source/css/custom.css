@@ -272,7 +272,7 @@ body, .site-name, #site-title {
   margin-right: 4px;
 }
 
-svg.icon {
+svg.menu_icon {
   width: 1.28em;
   height: 1.28em;
   vertical-align: -0.15em;
@@ -356,9 +356,20 @@ div#archive {
 /* ====================================== */
 /* 动态彩色图标（店长同款） */
 /* ====================================== */
-svg.icon {
+svg.menu_icon {
   width: 1.28em;
   height: 1.28em;
+  vertical-align: -0.15em;
+  overflow: hidden;
+}
+}
+
+/* ====================================== */
+/* 社交彩色图标（店长同款） */
+/* ====================================== */
+svg.social_icon {
+  width: 0.85em;
+  height: 0.85em;
   vertical-align: -0.15em;
   overflow: hidden;
 }

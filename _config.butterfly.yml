@@ -8,12 +8,12 @@ menu:
   归档: /archives || icon-guidang || faa-tada
   分类: /categories || icon-fenlei || faa-tada
   标签: /tags || icon-biaoqian || faa-tada
-  更多 || icon-more-br || faa-tada || hide:
+  更多 || icon-gengduo || faa-tada || hide:
     音乐: /music/ || icon-yinle || faa-tada
     电影: /movies/ || icon-dianying || faa-tada
-    留言: /comments/ || icon-pinglun || faa-tada
-  友链: /link/ || icon-youlianguanli || faa-tada
-  关于: /about/ || icon-guanyu || faa-tada
+    留言: /comments/ || icon-liuyan || faa-tada
+  友链: /link/ || icon-youlian || faa-tada
+  关于: /about/ || icon--_guanyu || faa-tada
 # Code blocks
 code_blocks:
   theme: darker
@@ -23,10 +23,10 @@ code_blocks:
 
 # Social
 social:
-  fab fa-github: https://github.com/moehime113 || GitHub
-  fab fa-weixin: /img/wechat.jpg || 微信 || '#07C160'
-  fab fa-qq: /img/qq.jpg || QQ || '#12B7F5'
-  fab fa-bilibili: https://space.bilibili.com/1978757278 || B站 || '#FB7299'
+  微信: /img/wechat.jpg || icon-weixin || faa-tada
+  B站: https://space.bilibili.com/1978757278 || icon-a-Bzhan2x || faa-tada
+  QQ: /img/qq.jpg || icon-QQ || faa-tada
+  GitHub: https://github.com/moehime113 || icon-a-github_github || faa-tada
 
 # Global images
 favicon: /img/favicon.ico
@@ -145,8 +145,6 @@ aside:
   position: right
   display:
     archive: true
-    tag: true
-    category: true
   card_recent_post:
     enable: true
   card_newest_comments:
@@ -215,12 +213,12 @@ inject:
     - <link rel="icon" href="/img/favicon.ico">
     - <link rel="stylesheet" href="/css/custom.css">
     - <link rel="stylesheet" href="/css/universe.css">
-    - <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5162321_02l435p6df9.css" media="defer" onload="this.media='all'">
+    - <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5162325_s9ow3cmoryo.css" media="defer" onload="this.media='all'">
     - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css" media="defer" onload="this.media='all'">
   bottom:
     - <canvas id="universe"></canvas>
     - <script defer src="/js/universe.js"></script>
-    - <script async src="//at.alicdn.com/t/c/font_5162321_02l435p6df9.js"></script>
+    - <script async src="//at.alicdn.com/t/c/font_5162325_s9ow3cmoryo.js"></script>
 # ------------------------------
 # 站内搜索
 # ------------------------------
