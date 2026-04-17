@@ -10,7 +10,7 @@ menu:
   标签: /tags || icon-biaoqian || faa-tada
   更多 || icon-gengduo || faa-tada || hide:
     音乐: /music/ || icon-yinle || faa-tada
-    统计: /charts/ || icon-tubiao || faa-tada
+    统计: /charts/ || icon-tongji || faa-tada
     电影: /movies/ || icon-dianying || faa-tada
     留言: /comments/ || icon-liuyan || faa-tada
   友链: /link/ || icon-youlian || faa-tada
@@ -295,12 +295,13 @@ inject:
   head:
     - <link rel="icon" href="/img/favicon.ico">
     - <link rel="stylesheet" href="/css/custom.css">
+    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
     - <link rel="stylesheet" href="/css/readPercent.css">
     - <link rel="stylesheet" href="/css/kslink.css">
     - <link rel="stylesheet" href="/css/sun_moon.css">
     - <script src="https://npm.elemecdn.com/echarts@5.5.1/dist/echarts.min.js"></script>
     - <link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css">
-    - <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5162325_s9ow3cmoryo.css" media="defer" onload="this.media='all'">
+    - <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5162325_e9yfyszvpir.css" media="defer" onload="this.media='all'">
     - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css" media="defer" onload="this.media='all'">
   bottom:
     - <script defer data-pjax src="/js/sakura.js"></script>
@@ -316,7 +317,7 @@ inject:
     - <script defer data-pjax src="/js/charts.js"></script>
     - <script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
     - <script defer src="/js/share.js"></script>
-    - <script async src="//at.alicdn.com/t/c/font_5162325_s9ow3cmoryo.js"></script>
+    - <script async src="//at.alicdn.com/t/c/font_5162325_e9yfyszvpir.js"></script>
 # ------------------------------
 # 站内搜索
 # ------------------------------
