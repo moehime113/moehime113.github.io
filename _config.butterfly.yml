@@ -122,7 +122,7 @@ footer:
 
   custom_text: |
     <div style="display:flex;align-items:center;justify-content:center;gap:16px;font-size:14px;margin-top:8px;">
-      Powered by Hexo & Butterfly &nbsp; | &nbsp;
+      <span>Powered by <a target="_blank" href="https://hexo.io/" title="Hexo">Hexo</a> &amp; <a target="_blank" href="https://butterfly.js.org/" title="Butterfly">Butterfly</a></span> <span class="footer-separator">|</span>
     </div>
   runtime:
     enable: false
