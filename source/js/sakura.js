@@ -11,7 +11,7 @@
 
   // 你可以替换成自己的图片地址
   var sakuraImg = new Image();
-  sakuraImg.src = 'https://npm.elemecdn.com/tzy-blog/lib/img/other/sakura.png';
+  sakuraImg.src = 'https://cdn1.tianli0.top/npm/tzy-blog/lib/img/other/sakura.png';
 
   var leafImg = new Image();
   leafImg.src = 'https://img.cdn.nesxc.com/upload/wordpress/202202251325420webp';

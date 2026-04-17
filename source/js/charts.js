@@ -2,9 +2,9 @@
   const CHART_IDS = ['posts-chart', 'tags-chart', 'categories-chart'];
   const chartInstances = new Map();
   const ECHARTS_CDNS = [
-    'https://npm.elemecdn.com/echarts@5.5.1/dist/echarts.min.js',
-    'https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js',
-    'https://cdn.bootcdn.net/ajax/libs/echarts/5.5.1/echarts.min.js'
+    'https://cdn.bootcdn.net/ajax/libs/echarts/5.5.0/echarts.min.js',
+    'https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.min.js',
+    'https://cdn.staticfile.org/echarts/5.4.3/echarts.min.js'
   ];
 
   const getThemeColor = () =>

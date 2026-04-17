@@ -38,20 +38,20 @@ CDN:
   custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
 
   option:
-    algolia_search_v4: https://cdn.staticfile.org/algoliasearch/4.14.3/algoliasearch-lite.umd.min.js
-    instantsearch_v4: https://cdn.staticfile.org/instantsearch.js/4.49.2/instantsearch.production.min.js
-    pjax: https://lib.baomitu.com/pjax/0.2.8/pjax.min.js
-    twikoo: https://cdn.staticfile.org/twikoo/1.6.8/twikoo.all.min.js
-    sharejs: https://lib.baomitu.com/social-share.js/1.0.16/js/social-share.min.js
-    sharejs_css: https://lib.baomitu.com/social-share.js/1.0.16/css/share.min.css
-    lazyload: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js
-    instantpage: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/instant.page/5.1.0/instantpage.min.js
-    typed: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/typed.js/2.0.12/typed.min.js
+    algolia_search_v4: https://cdn.bootcdn.net/ajax/libs/algoliasearch/4.14.3/algoliasearch-lite.umd.min.js
+    instantsearch_v4: https://cdn.bootcdn.net/ajax/libs/instantsearch.js/4.49.2/instantsearch.production.min.js
+    pjax: https://cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js
+    twikoo: https://cdn1.tianli0.top/npm/twikoo@1.6.44/dist/twikoo.all.min.js
+    sharejs: https://cdn.bootcdn.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js
+    sharejs_css: https://cdn.bootcdn.net/ajax/libs/social-share.js/1.0.16/css/share.min.css
+    lazyload: https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.3.1/lazyload.iife.min.js
+    instantpage: https://cdn.bootcdn.net/ajax/libs/instant.page/5.1.0/instantpage.min.js
+    typed: https://cdn.bootcdn.net/ajax/libs/typed.js/2.0.12/typed.min.js
     fancybox_css_v4: https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.min.css
     fancybox_v4: https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.umd.min.js
-    fontawesomeV6: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css
-    aplayer_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
-    aplayer_js: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
+    fontawesomeV6: https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css
+    aplayer_css: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css
+    aplayer_js: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js
     meting_js: https://cdn1.tianli0.top/npm/js-heo@1.0.12/metingjs/Meting.min.js
 # Code blocks
 code_blocks:
@@ -269,14 +269,15 @@ busuanzi:
 # 2) 独立页面通过 front-matter 的 comments: true/false 控制。
 # ------------------------------
 comments:
-  use:
+  use: Twikoo
   text: true
   lazyload: false
   count: false
   card_post_count: false
 
 twikoo:
-  envId: https://your-twikoo-domain.example.com
+  # 填写你在 Vercel 部署的 Twikoo 后端地址（必须带 https），例如 https://xxx.vercel.app
+  envId: https://hexotwikoo.vercel.app
   region:
   visitor: false
   option:
@@ -333,14 +334,14 @@ inject:
   head:
     - <link rel="icon" href="/img/favicon.ico">
     - <link rel="stylesheet" href="/css/custom.css">
-    - <link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.5.2/css/all.min.css">
+    - <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.2/css/all.min.css">
     - <link rel="stylesheet" href="/css/readPercent.css">
     - <link rel="stylesheet" href="/css/kslink.css">
     - <link rel="stylesheet" href="/css/sun_moon.css">
-    - <script src="https://npm.elemecdn.com/echarts@5.5.1/dist/echarts.min.js"></script>
-    - <link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css">
-    - <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5162325_e9yfyszvpir.css" media="defer" onload="this.media='all'">
-    - <link rel="stylesheet" href="https://npm.elemecdn.com/font-awesome-animation@0.3.0/dist/font-awesome-animation.min.css" media="defer" onload="this.media='all'">
+    - <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    - <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.15.6/theme-chalk/index.min.css">
+    - <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_5162325_e9yfyszvpir.css" media="defer" onload="this.media='all'">
+    - <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome-animation/0.3.0/font-awesome-animation.min.css" media="defer" onload="this.media='all'">
   bottom:
     - <script defer data-pjax src="/js/nav.js"></script>
     - <script defer data-pjax src="/js/sakura.js"></script>
@@ -348,15 +349,15 @@ inject:
     - <script defer data-pjax src="/js/runtime.js"></script>
     - <script defer data-pjax src="/js/readPercent.js"></script>
     - <script defer data-pjax src="/js/kslink.js"></script>
-    - <script async src="https://cdn1.tianli0.top/npm/vue@2.6.14/dist/vue.min.js"></script>
-    - <script async src="https://cdn1.tianli0.top/npm/element-ui@2.15.6/lib/index.js"></script>
+    - <script async src="https://cdn.staticfile.org/vue/2.6.14/vue.min.js"></script>
+    - <script async src="https://cdn.staticfile.org/element-ui/2.15.6/index.min.js"></script>
     - <script defer src="/js/f12-notify.js"></script>
     - <script defer data-pjax src="/js/sun_moon.js"></script>
     - <script defer src="/js/charts-data.js"></script>
     - <script defer data-pjax src="/js/charts.js"></script>
     - <script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
     - <script defer src="/js/share.js"></script>
-    - <script async src="//at.alicdn.com/t/c/font_5162325_e9yfyszvpir.js"></script>
+    - <script async src="https://at.alicdn.com/t/c/font_5162325_e9yfyszvpir.js"></script>
 # ------------------------------
 # 站内搜索
 # ------------------------------
@@ -374,10 +375,10 @@ envelope_comment:
   enable: true
   enable_page: /comments/
   custom_pic:
-    cover: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/violet.jpg
-    line: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png
-    beforeimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png
-    afterimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png
+    cover: https://cdn1.tianli0.top/npm/hexo-butterfly-envelope/lib/violet.jpg
+    line: https://cdn1.tianli0.top/npm/hexo-butterfly-envelope/lib/line.png
+    beforeimg: https://cdn1.tianli0.top/npm/hexo-butterfly-envelope/lib/before.png
+    afterimg: https://cdn1.tianli0.top/npm/hexo-butterfly-envelope/lib/after.png
   message:
   author: Echo
   header: 给我留个脚印吧 💌
@@ -412,7 +413,7 @@ categoryBar:
       cover: https://picsum.photos/id/5/600/300
     - descr: 游戏日常
       cover: https://picsum.photos/id/6/600/300
-  custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css
+  custom_css: https://cdn1.tianli0.top/npm/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css
 
   # 文章置顶轮播海报
 swiper:
@@ -425,10 +426,10 @@ swiper:
     name: recent-posts
     index: 0
   default_descr: 欢迎来到我的二次元小窝！✨
-  swiper_css: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css
-  swiper_js: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js
-  custom_css: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css
-  custom_js: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js
+  swiper_css: https://cdn1.tianli0.top/npm/hexo-butterfly-swiper/lib/swiper.min.css
+  swiper_js: https://cdn1.tianli0.top/npm/hexo-butterfly-swiper/lib/swiper.min.js
+  custom_css: https://cdn1.tianli0.top/npm/hexo-butterfly-swiper/lib/swiperstyle.css
+  custom_js: https://cdn1.tianli0.top/npm/hexo-butterfly-swiper/lib/swiper_init.js
 
 font:
   global-font-size: '15px'
@@ -460,9 +461,9 @@ wowjs:
     - class: #pagination
       style: animate__fadeIn
       duration: 1s
-  animate_css: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css
-  wow_js: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js
-  wow_init_js: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js
+  animate_css: https://cdn1.tianli0.top/npm/hexo-butterfly-wowjs/lib/animate.min.css
+  wow_js: https://cdn1.tianli0.top/npm/hexo-butterfly-wowjs/lib/wow.min.js
+  wow_init_js: https://cdn1.tianli0.top/npm/hexo-butterfly-wowjs/lib/wow_init.js
 
 # ================================
 # 店长外挂标签（稳定精简版）
@@ -482,7 +483,7 @@ tag_plugins:
     issues: false
     iconfont: false
     carousel: false
-    tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.3.5/lib/tag_plugins.css
+    tag_plugins_css: https://cdn1.tianli0.top/npm/hexo-butterfly-tag-plugins-plus@1.3.5/lib/tag_plugins.css
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
