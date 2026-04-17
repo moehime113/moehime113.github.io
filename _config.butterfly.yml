@@ -155,7 +155,7 @@ aside:
   card_recent_post:
     enable: true
   card_newest_comments:
-    enable: true
+    enable: false
     limit: 6
     storage: 10
     avatar: true

@@ -272,10 +272,15 @@ body, .site-name, #site-title {
   margin-right: 4px;
 }
 
+/* ====================================== */
+/* SVG 动态彩色图标（菜单栏 & 社交栏通用） */
+/* ====================================== */
+svg.icon,
 svg.menu_icon {
   width: 1.28em;
   height: 1.28em;
   vertical-align: -0.15em;
+  fill: currentColor;
   overflow: hidden;
 }/* ================================ */
 /* 博客全局样式美化：毛玻璃亚克力风格 */
