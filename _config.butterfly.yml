@@ -56,6 +56,9 @@ CDN:
     aplayer_css: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css
     aplayer_js: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js
     meting_js: https://cdn1.tianli0.top/npm/js-heo@1.0.12/metingjs/Meting.min.js
+    # 打赏按钮投币效果
+    coin_js: /js/coin.js
+    coin_css: /css/coin.css
 # Code blocks
 code_blocks:
   theme: darker
@@ -126,9 +129,11 @@ post_copyright:
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 reward:
-  enable: false
+  enable: true
+  text: 投喂作者
+  coinAudio: https://npm.elemecdn.com/akilar-candyassets@1.0.36/audio/aowu.m4a
   QR_code:
-    - img: /img/wechat_pay.png
+    - img: /img/wechat_pay.jpg
       link:
       text: wechat
     - img: /img/alipay.jpg
