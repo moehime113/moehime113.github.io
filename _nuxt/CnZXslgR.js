@@ -1,0 +1,1 @@
+import{f as o,u as s,c as t,a as e,o as n}from"./BtqsYq34.js";const l={id:"page"},p=o({__name:"[...slug]",setup(r){return s({title:"404 | Echo"}),(u,a)=>(n(),t("div",l,[...a[0]||(a[0]=[e("div",{class:"page-header",style:{backgroundImage:"url(/img/404.jpg)"}},[e("h1",null,"页面没有找到"),e("p",null,"404 Not Found")],-1)])]))}});export{p as default};
