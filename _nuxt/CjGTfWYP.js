@@ -1,0 +1,1 @@
+import{_ as c,c as n,a as s,o as t}from"./JLIGYDbi.js";const a={},o={class:"not-found"};function _(d,e){return t(),n("div",o,[...e[0]||(e[0]=[s("div",{class:"nf-content"},[s("span",{class:"nf-code"},"404"),s("h1",{class:"nf-title"},"页面走丢了~"),s("p",{class:"nf-desc"},"别担心，链接还在博客里，只是暂时迷路啦")],-1)])])}const f=c(a,[["render",_],["__scopeId","data-v-a0ec97c9"]]);export{f as default};

@@ -1,0 +1,1 @@
+import"./JLIGYDbi.js";const s=globalThis.setInterval;export{s};
